@@ -57,7 +57,7 @@ class User extends Model
      * @var array
      */
     protected $casts = [
-	    'country' => \WW\Countries\Casts\Country::class,
+        'country' => \WW\Countries\Casts\Country::class,
     ];
 }
 ```
