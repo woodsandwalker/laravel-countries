@@ -1,6 +1,6 @@
 # Laravel Countries
-[![Packagist Downloads](https://img.shields.io/packagist/dt/woodsandwalker/laravel-countries?color=brightgreen)](https://packagist.org/packages/woodsandwalker/laravel-countries)
-[![Packagist Version](https://img.shields.io/packagist/v/woodsandwalker/laravel-countries?color=brightgreen)](https://packagist.org/packages/woodsandwalker/laravel-countries)
+[![Packagist Downloads](https://img.shields.io/packagist/dt/woodsandwalker/laravel-countries?color=brightgreen?)](https://packagist.org/packages/woodsandwalker/laravel-countries)
+[![Packagist Version](https://img.shields.io/packagist/v/woodsandwalker/laravel-countries?color=brightgreen?)](https://packagist.org/packages/woodsandwalker/laravel-countries)
 
 Laravel Countries is a bundle for Laravel providing ISO 3166_2 codes for all countries along with a country model, cast and validation rule.
 
