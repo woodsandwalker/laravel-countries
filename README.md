@@ -28,7 +28,7 @@ The package contains a validation rule which validates the ISO code.
 
 ```php
 $data = $request->validate([
-	'country' => ['required', new \WW\Countries\Rules\Country]
+    'country' => ['required', new \WW\Countries\Rules\Country]
 ]);
 ```
 
@@ -42,7 +42,7 @@ You can use the following migration to add a country column to the users table.
 
 ```php
 Schema::table('users', function (Blueprint  $table) {
-	$table->char('country', 2);
+    $table->char('country', 2);
 });
 ```
 
@@ -51,14 +51,14 @@ Then add the cast to the user model:
 ```php
 class User extends Model
 {
-	/**
-	 * The attributes that should be cast.
-	 * 
-	 * @var array
-	 */
-	protected $casts = [
-		'country' => \WW\Countries\Casts\Country::class,
-	];
+    /**
+     * The attributes that should be cast.
+     * 
+     * @var array
+     */
+    protected $casts = [
+	    'country' => \WW\Countries\Casts\Country::class,
+    ];
 }
 ```
 
