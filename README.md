@@ -12,6 +12,24 @@ Laravel Countries is a bundle for Laravel providing ISO 3166_2 codes for all cou
 composer require woodsandwalker/laravel-countries
 ```
 
+### Configuration
+
+There is minimal config and the package can be used without any configuration. The only configuration option is an array of countries to exclude. This works by applying a global scope on the Country model.
+
+To publish the configuration you can run this command:
+
+```bash
+php artisan vendor:publish --tag=countries-config
+```
+
+To exclude a country simply add its ISO code to the exclude array:
+
+```php
+[
+    'exclude' => ['GB']
+]
+```
+
 ### Model
 
 The package contains a [calebporzio/sushi](https://packagist.org/packages/calebporzio/sushi) model which contains the `iso_code` and `name` for each country. Using this type of model also means there is no database migration required.

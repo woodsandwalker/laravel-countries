@@ -2,7 +2,7 @@
 
 namespace WW\Countries\Models;
 
-use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Sushi\Sushi;
 
@@ -1013,6 +1013,18 @@ class Country extends Model
             'name' => 'Zimbabwe'
         ],
     ];
+
+    /**
+     * The "booted" method of the model.
+     *
+     * @return void
+     */
+    protected static function booted()
+    {
+        static::addGlobalScope('exclude_countries', function (Builder $builder) {
+            $builder->whereNotIn('iso_code', config('countries.exclude', []));
+        });
+    }
 
     /**
      * Get the country name.
