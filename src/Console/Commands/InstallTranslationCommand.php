@@ -4,7 +4,6 @@ namespace WW\Countries\Console\Commands;
 
 use Exception;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Http;
 
 class InstallTranslationCommand extends Command
 {
