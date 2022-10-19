@@ -2,6 +2,7 @@
 
 namespace WW\Countries\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Sushi\Sushi;
 
@@ -9,6 +10,11 @@ class Country extends Model
 {
     use Sushi;
 
+    /**
+     * The data rows
+     * 
+     * @var array
+     */
     protected $rows = [
         [
             'iso_code' => 'AF',
@@ -1007,4 +1013,17 @@ class Country extends Model
             'name' => 'Zimbabwe'
         ],
     ];
+
+    /**
+     * Get the country name.
+     *
+     * @return string
+     */
+    public function getNameAttribute($value)
+    {
+        $transKey = sprintf('countries.%s', $this->iso_code);
+        $name = trans($transKey);
+
+        return $name === $transKey ? $value : $name;
+    }
 }

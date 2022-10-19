@@ -19,7 +19,7 @@ The package contains a [calebporzio/sushi](https://packagist.org/packages/calebp
 This model can be used like any other Laravel model.
 
 ```php
-$countryName = \WW\Countries\Models\Country::whereIsoCode('GB')->first()->name;
+$countryName = \WW\Countries\Models\Country::whereIsoCode('GB')->first()->name; // United Kingdom
 ```
 
 ### Validation Rule
@@ -65,6 +65,8 @@ class User extends Model
 Store a country against a user:
 
 ```php
+$user = User::find(1);
+
 $user->country = 'GB';
 $user->save();
 ```
@@ -76,6 +78,20 @@ $user = User::find(1);
 
 $countryIsoCode = $user->country->iso_code; // GB
 $countryName = $user->country->name; // United Kingdom
+```
+
+## Localization
+
+When accessing a country name the model will look for a translation string of `countries.{ISO_CODE}`, for example, `countries.GB`. If this translation string cannot be found it will fallback to the `en` locale.
+
+### Installing New Locales
+
+A command is included with the package to install new country locales from [umpirsky/country-list](https://github.com/umpirsky/country-list). You can view all the available locales [here](https://github.com/umpirsky/country-list/tree/master/data). This command will create a new file in `lang/{locale}/countries.php`. This command uses the `file_get_contents` function which requires `allow_url_fopen` to be on in your PHP config.
+
+To install a new locale, for example Spanish (es), run the command:
+
+```bash
+php artisan countries:install-translation es
 ```
 
 ## License

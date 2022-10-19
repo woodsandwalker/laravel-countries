@@ -13,11 +13,20 @@
         }
     ],
     "require": {
+        "php": "^8.0|^8.1",
+        "illuminate/database": "^9.0",
         "calebporzio/sushi": "^2.4"
     },
     "autoload": {
         "psr-4": {
             "WW\\Countries\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "WW\\Countries\\LaravelCountriesServiceProvider"
+            ]
         }
     },
     "config": {
