@@ -2,7 +2,10 @@
     "name": "woodsandwalker/laravel-countries",
     "type": "library",
     "description": "Laravel Countries is a bundle for Laravel providing ISO 3166_2 codes for all countries along with a country model, cast and validation rule.",
-    "keywords": ["laravel", "countries"],
+    "keywords": [
+        "laravel",
+        "countries"
+    ],
     "homepage": "https://github.com/woodsandwalker/laravel-countries",
     "license": "MIT",
     "authors": [
@@ -13,9 +16,9 @@
         }
     ],
     "require": {
-        "php": "^8.0|^8.1|^8.2",
-        "illuminate/database": "^6.0|^7.0|^8.0|^9.0|^10.0",
-        "calebporzio/sushi": "^2.4"
+        "php": "^8.0|^8.1|^8.2|^8.3",
+        "illuminate/database": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0",
+        "calebporzio/sushi": "^2.5"
     },
     "autoload": {
         "psr-4": {
